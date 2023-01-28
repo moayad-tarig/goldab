@@ -103,6 +103,7 @@ class PersonController extends Controller
         //     $brothers = [];
         //     $sisters = [];
         // }
+        seo()->title('helo');
         return view('backend.person.show', [
             "person" => $person,
             "brothers_from_father" => $brothers_from_father,

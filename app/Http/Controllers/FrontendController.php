@@ -16,6 +16,7 @@ class FrontendController extends Controller
         //     $persons = Person::where('name', 'like', '%' . $request->searchText . '%')->get();
         //     return view('frontend.search', ['searchText' => $request->input('searchText'), 'persons' => $persons]);
         // }
+        seo()->title('شجرة عائلة القولداب');
         $big_families = BigFamily::query()
             ->when($request->input('searchText'), function ($q) use ($request) {
                 $q->where('name', 'like', '%' . $request->searchText . '%');
@@ -30,6 +31,7 @@ class FrontendController extends Controller
     {
 
         $person = Person::findOrFail($request->id);
+        seo()->title($person->name);
 
         // dd(Person::all());
         // dd($person);
@@ -39,6 +41,7 @@ class FrontendController extends Controller
     public function showGoldabMember()
  
     {
+        seo()->title('شجرة عائلة القولداب');
         $person = Person::findOrFail(22);
 
         // dd(Person::all());
@@ -47,6 +50,7 @@ class FrontendController extends Controller
     }
     public function showFamilyMembers(Request $request)
     {
+        seo()->title('شجرة عائلة القولداب');
 
         $people = Person::when($request->searchText, function ($q) use ($request) {
             $q->where('name', 'like', '%' . $request->searchText . '%');

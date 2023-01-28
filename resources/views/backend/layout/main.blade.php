@@ -10,7 +10,8 @@
     <meta name="keywords"
         content="admin template, modern admin template, dashboard template, flat admin template, responsive admin template, web app, crypto dashboard, bitcoin dashboard">
     <meta name="author" content="PIXINVENT">
-    <title> {{ env('app-name', 'شجره العائله') }}
+    {{-- <title> {{ env('app-name', 'شجره العائله') }} --}}
+        {{ seo()->render() }}
     </title>
     <link rel="apple-touch-icon" href="../../../template/app-assets/images/ico/apple-icon-120.png">
     {{-- <link rel="shortcut icon" type="image/x-icon" href="{{asset('uploads/' . $OrganizationProfile->logo)}}"> --}}
